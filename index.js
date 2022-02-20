@@ -42,7 +42,7 @@ const questions = () => {
         type: 'checkbox',
         name: 'license',
         message: 'Choose your license for your project.',
-        choices:['The MIT license', 'The GPL License', 'Apache License']
+        choices:['The MIT license', 'The GPL License', 'Apache License', 'Eclipse Public', 'Mozilla Public']
       },
       {
         type: 'input',
