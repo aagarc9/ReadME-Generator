@@ -4,6 +4,7 @@ const fs = require('fs');
 
 // Add Markdown page to index.js
 const generateReadMe = require('./utils/generateMarkdown.js');
+const generateMarkdown = require('./utils/generateMarkdown.js');
 
 // TODO: Create an array of questions for user input
 const questions = () => {
@@ -42,7 +43,7 @@ const questions = () => {
         type: 'checkbox',
         name: 'license',
         message: 'Choose your license for your project.',
-        choices:['The MIT license', 'The GPL License', 'Apache License', 'Eclipse Public', 'Mozilla Public']
+        choices:['MIT license', 'GPL License', 'Apache License', 'Eclipse Public', 'Mozilla Public']
       },
       {
         type: 'input',
@@ -69,7 +70,11 @@ function writeToFile(fileName, data) {
     });
 }
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+  inquirer.prompt(questions)
+  .then((answers) => writeToFile('README.md', generateMarkdown(answers))
+  );
+}
 
 // Function call to initialize app
 init();
