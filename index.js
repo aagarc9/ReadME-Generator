@@ -3,12 +3,10 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 
 // Add Markdown page to index.js
-const generateReadMe = require('./utils/generateMarkdown.js');
 const generateMarkdown = require('./utils/generateMarkdown.js');
 
 // TODO: Create an array of questions for user input
-const questions = () => {
-    return inquirer.prompt([
+const questions = [
       {
         type: 'input',
         name: 'title',
@@ -55,14 +53,13 @@ const questions = () => {
         name: 'email',
         message: 'What is the email for this project?',
       },
-    ]);
-};
+    ]
 
 
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    fs.writeFile(fileName, data, (err)=> {
+    fs.writeFile(fileName, data, (err) => {
         if (err) {
             console.log(err)
         }
