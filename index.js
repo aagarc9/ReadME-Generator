@@ -41,7 +41,7 @@ const questions = [
         type: 'checkbox',
         name: 'license',
         message: 'Choose your license for your project.',
-        choices:['MIT license', 'GPL License', 'Apache License', 'Eclipse Public', 'Mozilla Public']
+        choices:['MIT License', 'GPL License', 'Apache License', 'Eclipse Public', 'Mozilla Public']
       },
       {
         type: 'input',
@@ -53,7 +53,7 @@ const questions = [
         name: 'email',
         message: 'What is the email for this project?',
       },
-    ]
+]
 
 
 
