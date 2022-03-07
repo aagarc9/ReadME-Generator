@@ -4,6 +4,7 @@
 // Badge: https://img.shields.io/badge/<LABEL>-<MESSAGE>-<COLOR>
 
 function renderLicenseBadge(license) {
+  console.log({ license })
   if (license === 'MIT License') {
     return `![License: MIT](https://img.shields.io/badge/License-MIT-purple.svg)`;
   } if (license === "GPL License") {
@@ -41,6 +42,7 @@ function renderLicenseLink(license) {
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
+
   return `# ${data.title}
   
 ## Description
@@ -73,7 +75,7 @@ ${data.tests}
 
 ## Questions
 If you have any questions please contact me at ${data.email}.n\
-Checkout my Github with my username --  ${data.github}
+Checkout my Github with my username --  Github: <a href="https://github.com/${data.github}
 
 `;
 }
